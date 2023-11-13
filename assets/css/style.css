@@ -1,0 +1,48 @@
+html {
+  overflow-y: hidden;
+}
+
+body {
+  font-family: "Circular";
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(167, 167, 167);
+}
+
+.custom {
+  background-color: antiquewhite;
+}
+
+.custom1 {
+  background-color: aquamarine;
+}
+
+.custom2 {
+  background-color: beige;
+}
+
+#side-scroll {
+  overflow-y: scroll;
+  max-height: 76vh;
+}
+
+#main-scroll {
+  overflow-y: scroll;
+  max-height: 95vh;
+}
+
+#right-side {
+  max-height: 95vh;
+}
+
+#player-bar {
+  z-index: 1;
+  background-color: azure;
+  position: sticky;
+  bottom: 0;
+}
