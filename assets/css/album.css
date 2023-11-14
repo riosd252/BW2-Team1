@@ -28,50 +28,13 @@ body {
 #main-col {
   background: linear-gradient(
     0deg,
-    hsla(0, 0%, 7%, 1) 0%,
-    hsla(210, 11%, 15%, 1) 85%
+    hsla(0, 0%, 7%, 1) 49%,
+    hsla(48, 70%, 60%, 1) 80%
   );
-}
-
-#main-scroll {
-  overflow-y: scroll;
-  max-height: 84vh;
-}
-
-#ad-banner {
-  background: linear-gradient(
-    10deg,
-    hsla(0, 0%, 0%, 1) 0%,
-    hsla(210, 11%, 15%, 1) 85%
-  );
-}
-
-#ad-img {
-  width: 190px;
-}
-
-#ad-title {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-.bg-cards {
-  background-color: #2d2d2d;
-}
-
-.bg-cards-favourites {
-  background-color: #181818;
 }
 
 .bg-green {
   background-color: #1ed760;
-}
-
-#rem-ad {
-  background-color: #222222;
-  color: #585858;
-  font-size: 0.7rem;
-  font-weight: 700;
 }
 
 #player-bar {
