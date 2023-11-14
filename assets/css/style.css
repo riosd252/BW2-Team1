@@ -14,15 +14,6 @@ body {
   background: rgb(167, 167, 167);
 }
 
-.custom {
-  background-color: #000000;
-}
-
-.custom2 {
-  background-color: black;
-  height: 100%;
-}
-
 #side-scroll {
   overflow-y: scroll;
   max-height: 76vh;
@@ -74,11 +65,6 @@ body {
   font-weight: 700;
 }
 
-/* #right-side {
-  background-color: black;
-  max-height: 95vh;
-} */
-
 #player-bar {
   z-index: 1;
   background-color: rgb(45, 45, 45);
@@ -94,7 +80,7 @@ body {
   height: 100vh;
   background-color: black;
 }
-.px-4 {
+.custom-right-side {
   padding: 0.3em !important;
   font-size: 0.5em;
 }
@@ -137,6 +123,7 @@ svg {
 .imgFriends1 {
   border-radius: 20px;
 }
+
 #side-scroll ul > li {
   list-style-type: none;
   color: #adae98;
