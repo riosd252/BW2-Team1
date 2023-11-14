@@ -20,93 +20,129 @@
   <body data-bs-theme="dark">
     <div class="container-fluid">
       <div class="row">
-        <div class="d-none d-md-block col-md-2 pe-0 custom bg-black">
+        <div class="d-none d-md-block col-md-2 pe-0 bg-black">
           <div>
-            <nav class="text-secondary">
+            <nav>
               <div class="cont_list_nav mt-5">
                 <button class="toggle-button">...</button>
                 <ul>
-                  <li>
-                    <i class="bi bi-house-door-fill"></i><a href="#">Home</a>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-house-door-fill"></i
+                    ><a class="nav-link" href="#">Home</a>
                   </li>
-                  <li><i class="bi bi-search"></i><a href="#">Cerca</a></li>
-                  <li>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-search"></i
+                    ><a class="nav-link" href="#">Cerca</a>
+                  </li>
+                  <li class="d-flex align-items-center">
                     <i class="bi bi-collection-fill"></i
-                    ><a href="#">La Tua Libreria</a>
+                    ><a class="nav-link" href="#">La Tua Libreria</a>
                   </li>
                 </ul>
               </div>
               <div class="cont_list_nav2 mt-3">
                 <ul>
-                  <li>
+                  <li class="d-flex align-items-center">
                     <i class="bi bi-plus-square"></i
-                    ><a href="#">crea playlist</a>
+                    ><a class="nav-link" href="#">crea playlist</a>
                   </li>
-                  <li>
+                  <li class="d-flex align-items-center">
                     <i class="bi bi-box2-heart"></i
-                    ><a href="#">Brani che ti piacciono</a>
+                    ><a class="nav-link" href="#">Brani che ti piacciono</a>
                   </li>
-                  <li>
+                  <li class="d-flex align-items-center">
                     <i class="bi bi-bookmark-fill"></i
-                    ><a href="#">I tuoi episodi</a>
+                    ><a class="nav-link" href="#">I tuoi episodi</a>
                   </li>
                 </ul>
               </div>
             </nav>
           </div>
-          <hr class="division m-0 text-secondary" />
-          <div id="side-scroll">
+          <hr class="division m-0" />
+          <div id="side-scroll" class="custom-padding">
             <ul>
-              <li><a href="#">Lorem, ipsum dolor.</a></li>
-              <li><a href="#">Ullam, commodi ratione!</a></li>
-              <li><a href="#">Amet, tempore dolores?</a></li>
-              <li><a href="#">Placeat, cupiditate esse.</a></li>
-              <li><a href="#">Unde, deserunt eveniet.</a></li>
-              <li><a href="#">Nihil, quo voluptate.</a></li>
-              <li><a href="#">Dolor, quis culpa.</a></li>
-              <li><a href="#">Nemo, consequatur veniam!</a></li>
-              <li><a href="#">Odio, doloremque culpa!</a></li>
-              <li><a href="#">Consectetur, laudantium voluptatem.</a></li>
-              <li><a href="#">Doloremque, necessitatibus eaque!</a></li>
-              <li><a href="#">Sequi, laboriosam quasi?</a></li>
-              <li><a href="">Doloribus, optio similique!</a></li>
-              <li><a href="">Eius, minus autem.</a></li>
-              <li><a href="">Alias, est debitis.</a></li>
-              <li><a href="">Itaque, numquam iusto.</a></li>
-              <li><a href="">Iure, soluta dolores.</a></li>
-              <li><a href="">Quisquam, nam placeat!</a></li>
-              <li><a href="">Culpa, numquam similique!</a></li>
-              <li><a href="">Nesciunt, repellendus laboriosam?</a></li>
-              <li><a href="">Dolore, enim magni?</a></li>
-              <li><a href="">Nisi, ullam omnis.</a></li>
-              <li><a href="">Autem, sunt aspernatur.</a></li>
-              <li><a href="">Culpa, at veritatis.</a></li>
-              <li><a href="">Nesciunt, cumque commodi!</a></li>
-              <li><a href="">Hic, maxime vitae.</a></li>
-              <li><a href="">Quo, non dolorem.</a></li>
-              <li><a href="">Ipsam, soluta error!</a></li>
-              <li><a href="">Et, beatae libero!</a></li>
-              <li><a href="">Incidunt, non voluptatem!</a></li>
-              <li><a href="">Quam, assumenda est!</a></li>
-              <li><a href="">Doloremque, dolore numquam?</a></li>
-              <li><a href="">Magnam, quos corrupti.</a></li>
-              <li><a href="">Aliquid, suscipit voluptates.</a></li>
-              <li><a href="">Sunt, earum perspiciatis!</a></li>
-              <li><a href="">Ea, dicta nobis.</a></li>
-              <li><a href="">Molestias, praesentium. Rerum?</a></li>
-              <li><a href="">Distinctio, mollitia ad!</a></li>
-              <li><a href="">Vitae, odit minima.</a></li>
-              <li><a href="">Omnis, odit quod!</a></li>
-              <li><a href="">Error, qui dolore.</a></li>
-              <li><a href="">Nihil, esse non?</a></li>
-              <li><a href="">Unde, id nisi.</a></li>
-              <li><a href="">Animi, ullam asperiores!</a></li>
-              <li><a href="">Obcaecati, explicabo ab.</a></li>
-              <li><a href="">Alias, quia doloremque.</a></li>
-              <li><a href="">Fugiat, omnis quae.</a></li>
-              <li><a href="">Aperiam, beatae totam!</a></li>
-              <li><a href="">Error, autem molestiae.</a></li>
-              <li><a href="">Magni, quia nesciunt.</a></li>
+              <li><a class="nav-link" href="#">Lorem, ipsum dolor.</a></li>
+              <li><a class="nav-link" href="#">Ullam, commodi ratione!</a></li>
+              <li><a class="nav-link" href="#">Amet, tempore dolores?</a></li>
+              <li>
+                <a class="nav-link" href="#">Placeat, cupiditate esse.</a>
+              </li>
+              <li><a class="nav-link" href="#">Unde, deserunt eveniet.</a></li>
+              <li><a class="nav-link" href="#">Nihil, quo voluptate.</a></li>
+              <li><a class="nav-link" href="#">Dolor, quis culpa.</a></li>
+              <li>
+                <a class="nav-link" href="#">Nemo, consequatur veniam!</a>
+              </li>
+              <li><a class="nav-link" href="#">Odio, doloremque culpa!</a></li>
+              <li>
+                <a class="nav-link" href="#"
+                  >Consectetur, laudantium voluptatem.</a
+                >
+              </li>
+              <li>
+                <a class="nav-link" href="#"
+                  >Doloremque, necessitatibus eaque!</a
+                >
+              </li>
+              <li><a class="nav-link" href="#">Sequi, laboriosam quasi?</a></li>
+              <li>
+                <a class="nav-link" href="#">Doloribus, optio similique!</a>
+              </li>
+              <li><a class="nav-link" href="#">Eius, minus autem.</a></li>
+              <li><a class="nav-link" href="#">Alias, est debitis.</a></li>
+              <li><a class="nav-link" href="#">Itaque, numquam iusto.</a></li>
+              <li><a class="nav-link" href="#">Iure, soluta dolores.</a></li>
+              <li><a class="nav-link" href="#">Quisquam, nam placeat!</a></li>
+              <li>
+                <a class="nav-link" href="#">Culpa, numquam similique!</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#"
+                  >Nesciunt, repellendus laboriosam?</a
+                >
+              </li>
+              <li><a class="nav-link" href="#">Dolore, enim magni?</a></li>
+              <li><a class="nav-link" href="#">Nisi, ullam omnis.</a></li>
+              <li><a class="nav-link" href="#">Autem, sunt aspernatur.</a></li>
+              <li><a class="nav-link" href="#">Culpa, at veritatis.</a></li>
+              <li>
+                <a class="nav-link" href="#">Nesciunt, cumque commodi!</a>
+              </li>
+              <li><a class="nav-link" href="#">Hic, maxime vitae.</a></li>
+              <li><a class="nav-link" href="#">Quo, non dolorem.</a></li>
+              <li><a class="nav-link" href="#">Ipsam, soluta error!</a></li>
+              <li><a class="nav-link" href="#">Et, beatae libero!</a></li>
+              <li>
+                <a class="nav-link" href="#">Incidunt, non voluptatem!</a>
+              </li>
+              <li><a class="nav-link" href="#">Quam, assumenda est!</a></li>
+              <li>
+                <a class="nav-link" href="#">Doloremque, dolore numquam?</a>
+              </li>
+              <li><a class="nav-link" href="#">Magnam, quos corrupti.</a></li>
+              <li>
+                <a class="nav-link" href="#">Aliquid, suscipit voluptates.</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Sunt, earum perspiciatis!</a>
+              </li>
+              <li><a class="nav-link" href="#">Ea, dicta nobis.</a></li>
+              <li>
+                <a class="nav-link" href="#">Molestias, praesentium. Rerum?</a>
+              </li>
+              <li><a class="nav-link" href="#">Distinctio, mollitia ad!</a></li>
+              <li><a class="nav-link" href="#">Vitae, odit minima.</a></li>
+              <li><a class="nav-link" href="#">Omnis, odit quod!</a></li>
+              <li><a class="nav-link" href="#">Error, qui dolore.</a></li>
+              <li><a class="nav-link" href="#">Nihil, esse non?</a></li>
+              <li><a class="nav-link" href="#">Unde, id nisi.</a></li>
+              <li><a class="nav-link" href="#">Animi, ullam asperiores!</a></li>
+              <li><a class="nav-link" href="#">Obcaecati, explicabo ab.</a></li>
+              <li><a class="nav-link" href="#">Alias, quia doloremque.</a></li>
+              <li><a class="nav-link" href="#">Fugiat, omnis quae.</a></li>
+              <li><a class="nav-link" href="#">Aperiam, beatae totam!</a></li>
+              <li><a class="nav-link" href="#">Error, autem molestiae.</a></li>
+              <li><a class="nav-link" href="#">Magni, quia nesciunt.</a></li>
             </ul>
           </div>
         </div>
@@ -139,7 +175,7 @@
             </div>
           </div>
           <main id="main-scroll">
-            <div class="px-4">
+            <div class="pe-3">
               <div
                 id="ad-banner"
                 class="d-none d-lg-flex py-3 px-3 bg-black rounded d-flex"
@@ -297,7 +333,7 @@
                     VISUALIZZA TUTTO
                   </button>
                 </div>
-                <div class="row gy-3">
+                <div class="row gy-3 mb-5">
                   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2">
                     <div class="card bg-cards-favourites border-0">
                       <div class="card-body">
@@ -547,6 +583,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 p-3" id="player-bar">
           <div class="row">
             <div class="col-3 d-flex">
