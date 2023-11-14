@@ -18,10 +18,6 @@ body {
   background-color: #000000;
 }
 
-.custom1 {
-  background-color: aquamarine;
-}
-
 .custom2 {
   background-color: beige;
 }
@@ -33,7 +29,48 @@ body {
 
 #main-scroll {
   overflow-y: scroll;
-  max-height: 95vh;
+  max-height: 87vh;
+  background: linear-gradient(
+    0deg,
+    hsla(0, 0%, 7%, 1) 0%,
+    hsla(210, 11%, 15%, 1) 85%
+  );
+}
+
+#ad-banner {
+  background: linear-gradient(
+    10deg,
+    hsla(0, 0%, 0%, 1) 0%,
+    hsla(210, 11%, 15%, 1) 85%
+  );
+}
+
+#ad-img {
+  width: 190px;
+}
+
+#ad-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.bg-cards {
+  background-color: #2d2d2d;
+}
+
+.bg-cards-favourites {
+  background-color: #181818;
+}
+
+.bg-green {
+  background-color: #1ed760;
+}
+
+#rem-ad {
+  background-color: #222222;
+  color: #585858;
+  font-size: 0.7rem;
+  font-weight: 700;
 }
 
 #right-side {
