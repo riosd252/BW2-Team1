@@ -15,7 +15,7 @@ body {
 }
 
 .custom {
-  background-color: antiquewhite;
+  background-color: #000000;
 }
 
 .custom1 {
@@ -45,4 +45,34 @@ body {
   background-color: azure;
   position: sticky;
   bottom: 0;
+}
+#side-scroll ul > li {
+  list-style-type: none;
+  color: #adae98;
+}
+#side-scroll a {
+  text-decoration: none;
+  color: #adae98;
+}
+
+nav ul > li {
+  list-style-type: none;
+  color: #adae98;
+}
+nav a {
+  text-decoration: none;
+  color: #adae98;
+  vertical-align: middle;
+}
+
+nav i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  font-size: 1.4rem;
+}
+.toggle-button {
+  background: none;
+  border: none;
+  color: white; /* O qualsiasi altro colore che si abbini al tuo tema */
+  cursor: pointer;
 }
