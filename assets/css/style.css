@@ -14,14 +14,6 @@ body {
   background: rgb(167, 167, 167);
 }
 
-.custom {
-  background-color: antiquewhite;
-}
-
-.custom2 {
-  background-color: beige;
-}
-
 #side-scroll {
   overflow-y: scroll;
   max-height: 76vh;
@@ -88,7 +80,7 @@ body {
   height: 100vh;
   background-color: black;
 }
-.px-4 {
+.custom-right-side {
   padding: 0.3em !important;
   font-size: 0.5em;
 }
