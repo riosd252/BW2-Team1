@@ -1,5 +1,6 @@
 html {
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -8,20 +9,25 @@ body {
 
 ::-webkit-scrollbar {
   background-color: transparent;
+  width: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(167, 167, 167);
+  background: rgb(97, 97, 97);
 }
 
 #side-scroll {
   overflow-y: scroll;
-  max-height: 76vh;
+  max-height: 70vh;
+}
+
+.custom-padding {
+  padding-bottom: 8rem;
 }
 
 #main-scroll {
   overflow-y: scroll;
-  max-height: 87vh;
+  max-height: 84vh;
   background: linear-gradient(
     0deg,
     hsla(0, 0%, 7%, 1) 0%,
@@ -126,20 +132,16 @@ svg {
 
 #side-scroll ul > li {
   list-style-type: none;
-  color: #adae98;
 }
 #side-scroll a {
   text-decoration: none;
-  color: #adae98;
 }
 
 nav ul > li {
   list-style-type: none;
-  color: #adae98;
 }
 nav a {
   text-decoration: none;
-  color: #adae98;
   vertical-align: middle;
 }
 
