@@ -23,8 +23,17 @@
         <div class="d-none d-md-block col-md-2 pe-0 bg-black">
           <div>
             <nav>
-              <div class="cont_list_nav mt-5">
-                <button class="toggle-button">...</button>
+              <a
+                class="text-white"
+                data-bs-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                ...
+              </a>
+              <div class="collapse" id="collapseExample">
                 <ul>
                   <li class="d-flex align-items-center">
                     <i class="bi bi-house-door-fill"></i
@@ -40,6 +49,7 @@
                   </li>
                 </ul>
               </div>
+
               <div class="cont_list_nav2 mt-3">
                 <ul>
                   <li class="d-flex align-items-center">
@@ -146,36 +156,152 @@
             </ul>
           </div>
         </div>
-        <div id="main-col" class="col-12 col-md-10 col-lg-9 pe-0">
-          <div class="d-flex justify-content-between pe-5">
-            <div>
-              <button class="btn px-1" type="button">
-                <i
-                  class="bi bi-arrow-left-circle fs-4 text-secondary"
-                ></i></button
-              ><button class="btn px-1" type="button">
-                <i class="bi bi-arrow-right-circle fs-4 text-secondary"></i>
-              </button>
+        <div id="main-col" class="col-12 col-md-10 col-lg-8 px-0">
+          <main id="main-scroll">
+            <div id="nav" class="d-flex justify-content-between px-3">
+              <div>
+                <button class="btn px-1" type="button">
+                  <i
+                    class="bi bi-arrow-left-circle fs-4 text-secondary"
+                  ></i></button
+                ><button class="btn px-1" type="button">
+                  <i class="bi bi-arrow-right-circle fs-4 text-secondary"></i>
+                </button>
+              </div>
+              <div class="my-auto">
+                <a
+                  class="btn rounded-pill bg-black py-0 ps-0 dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-person-circle me-1"></i>Team 1
+                </a>
+                <ul class="dropdown-menu bg-black">
+                  <li><a class="dropdown-item" href="#">View profile</a></li>
+                  <li><a class="dropdown-item" href="#">Edit profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="my-auto">
-              <a
-                class="btn rounded-pill bg-black py-0 ps-0 dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <div id="top-section" class="px-3">
+              <div
+                id="album-header"
+                class="d-flex flex-column align-items-center flex-xl-row px-2"
               >
-                <i class="bi bi-person-circle me-1"></i>Team 1
-              </a>
-              <ul class="dropdown-menu bg-black">
-                <li><a class="dropdown-item" href="#">View profile</a></li>
-                <li><a class="dropdown-item" href="#">Edit profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-              </ul>
+                <div id="album-img-container" class="py-3">
+                  <img
+                    class="w-100 shadow-lg"
+                    id="album-img"
+                    src="./assets/imgs/main/image-1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="d-md-none">
+                  <p>
+                    <img
+                      class="rounded-pill"
+                      id="as-artist-img"
+                      src="./assets/imgs/main/image-1.jpg"
+                    />
+                    <span id="m-artist" class="fw-bold"
+                      >Pinguini Tattici Nucleari</span
+                    >
+                    · <span id="m-album-year">2017</span> ·
+                    <span class="m-tracks">12</span> brani,
+                    <span id="m-album-duration" class="fade-opacity"
+                      >53 min 20 sec.</span
+                    >
+                  </p>
+                </div>
+                <div
+                  id="banner-text"
+                  class="ps-3 d-none d-md-block align-self-end"
+                >
+                  <div>
+                    <p class="mb-0">Album</p>
+                    <h1 id="album-title">Gioventù brucata</h1>
+                    <p>
+                      <img
+                        class="rounded-pill"
+                        id="as-artist-img"
+                        src="./assets/imgs/main/image-1.jpg"
+                      />
+                      <span id="d-artist" class="fw-bold"
+                        >Pinguini Tattici Nucleari</span
+                      >
+                      · <span id="d-album-year">2017</span> ·
+                      <span id="d-tracks">12</span> brani,
+                      <span id="d-album-duration" class="fade-opacity"
+                        >53 min 20 sec.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+            <div id="bottom-section">
+              <div class="ms-4 pt-3">
+                <a class="me-4 align-middle" role="button"
+                  ><i class="bi bi-play-circle-fill fs-1 col-green"></i
+                ></a>
+                <a class="me-3 align-middle fade-opacity" role="button"
+                  ><i class="bi bi-heart fs-4"></i
+                ></a>
+                <a class="me-3 align-middle fade-opacity" role="button"
+                  ><i class="bi bi-download fs-4"></i
+                ></a>
+                <a role="button" class="align-middle fade-opacity"
+                  ><i class="bi bi-three-dots fs-4"></i
+                ></a>
+              </div>
+              <div class="px-4">
+                <table class="w-100">
+                  <thead class="border-bottom">
+                    <tr>
+                      <th class="fs-headers-row fade-opacity ps-3 w-3">#</th>
+                      <th class="fs-headers-row fade-opacity w-55">TITOLO</th>
+                      <th class="fs-headers-row fade-opacity w-30">
+                        RIPRODUZIONI
+                      </th>
+                      <th class="fs-headers-row fade-opacity w-5">
+                        <i class="bi bi-clock"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        id="track-number"
+                        class="fs-tbody fade-opacity ps-3 w-3"
+                      >
+                        1
+                      </td>
+                      <td class="fs-tbody w-55">
+                        <div>
+                          <p id="track-title" class="my-0 fw-bold">
+                            Montanelli - Intro
+                          </p>
+                          <p id="track-artist" class="my-0 fade-opacity">
+                            Pinguini Tattici Nucleari
+                          </p>
+                        </div>
+                      </td>
+                      <td id="track-fans" class="fs-tbody fade-opacity w-30">
+                        694.598
+                      </td>
+                      <td id="track-length" class="fs-tbody fade-opacity w-5">
+                        1:28
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </main>
         </div>
-        <div class="siderbarRx p-0 d-none d-lg-block col-lg-1">
+        <div class="siderbarRx p-0 d-none d-lg-block col-lg-2">
           <div class="bg-black custom-right-side pt-4 container-fluid">
             <div
               class="d-flex fs-5 justify-content-between text-white align-items-center mb-3"

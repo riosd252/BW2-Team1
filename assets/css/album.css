@@ -7,13 +7,32 @@ body {
   font-family: "Circular";
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  width: 0.8rem;
+.w-3 {
+  width: 3%;
 }
 
+.w-55 {
+  width: 55%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-5 {
+  width: 5%;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
 ::-webkit-scrollbar-thumb {
-  background: rgb(97, 97, 97);
+  background: rgba(97, 97, 97, 0.384);
+}
+
+#nav {
+  position: sticky;
+  top: 0;
 }
 
 #side-scroll {
@@ -21,20 +40,66 @@ body {
   max-height: 70vh;
 }
 
+#bottom-section {
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 50%,
+    rgba(18, 18, 18, 0.171) 90%
+  );
+}
+
 .custom-padding {
   padding-bottom: 8rem;
 }
 
 #main-col {
+  overflow-y: scroll;
+  height: 100vh;
+  padding-bottom: 10rem;
   background: linear-gradient(
     0deg,
-    hsla(0, 0%, 7%, 1) 49%,
-    hsla(48, 70%, 60%, 1) 80%
+    hsla(0, 0%, 7%, 1) 55%,
+    hsla(48, 70%, 60%, 1) 100%
   );
+}
+
+#nav {
+  background-color: rgba(10, 10, 10, 0.199);
+}
+
+#album-img-container {
+  width: 225px;
+}
+
+#album-title {
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: -0.4rem;
+}
+
+#as-artist-img {
+  width: 25px;
+}
+
+.fs-headers-row {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.fs-tbody {
+  font-size: 0.8rem;
+}
+
+.fade-opacity {
+  color: rgba(255, 255, 255, 0.575);
 }
 
 .bg-green {
   background-color: #1ed760;
+}
+
+.col-green {
+  color: #1ed760;
 }
 
 #player-bar {
