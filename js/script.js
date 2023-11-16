@@ -19,18 +19,23 @@ document.addEventListener("DOMContentLoaded", function () {
 function fetchTracksByArtists(artists, numTracks) {
   const promises = artists.map((artist) =>
     fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/search?q=artist:"${encodeURIComponent(artist)}"&limit=${numTracks}`,
+      `https://deezerdevs-deezer.p.rapidapi.com/search?q=artist:"${encodeURIComponent(
+        artist
+      )}"&limit=${numTracks}`,
       {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": "f8c6943d93msh1d1ded0507d1851p17c44djsn3c38bf1a0938",
+          "X-RapidAPI-Key":
+            "f8c6943d93msh1d1ded0507d1851p17c44djsn3c38bf1a0938",
           "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
         },
       }
     )
       .then((response) => response.json())
       .then((data) => data.data)
-      .catch((error) => console.error(`Errore nel fetch dei dati per ${artist}:`, error))
+      .catch((error) =>
+        console.error(`Errore nel fetch dei dati per ${artist}:`, error)
+      )
   );
 
   Promise.all(promises)
@@ -41,7 +46,9 @@ function fetchTracksByArtists(artists, numTracks) {
       creaEpopolaCards(combinedTracks);
       updateDOMWithAlbumData(combinedTracks);
     })
-    .catch((error) => console.error("Errore durante il recupero dei dati:", error));
+    .catch((error) =>
+      console.error("Errore durante il recupero dei dati:", error)
+    );
 }
 function updateDOMWithAlbumData(tracks) {
   const randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
@@ -49,12 +56,19 @@ function updateDOMWithAlbumData(tracks) {
   if (randomTrack && randomTrack.album) {
     const adImg = document.getElementById("ad-img");
     const adTitle = document.getElementById("ad-title");
-    const adArtist = document.getElementById("banner-text").getElementsByTagName("p")[1];
+    const adArtist = document
+      .getElementById("banner-text")
+      .getElementsByTagName("p")[1];
     const playButton = document.getElementById("play-button");
-    const goToAlbumLink = document.querySelector('.dropdown-item[href^="album.html"]');
-    const goToAlbumLink2 = document.querySelector('.dropdown-item[href^="artist.html"]');
+    const goToAlbumLink = document.querySelector(
+      '.dropdown-item[href^="album.html"]'
+    );
+    const goToAlbumLink2 = document.querySelector(
+      '.dropdown-item[href^="artist.html"]'
+    );
 
-    adImg.src = randomTrack.album.cover_medium || "./assets/imgs/main/default-image.jpg";
+    adImg.src =
+      randomTrack.album.cover_medium || "./assets/imgs/main/default-image.jpg";
     adImg.alt = "Cover di " + randomTrack.album.title;
     adTitle.textContent = randomTrack.album.title;
     adArtist.textContent = randomTrack.artist.name;
@@ -145,9 +159,12 @@ function popolaNextWick(tracks) {
     const img = card.querySelector("img");
     const title = card.querySelector(".card-body p");
 
-    img.src = tracks[indiceCasuale].album.cover_medium || "./assets/imgs/main/default-image.jpg";
+    img.src =
+      tracks[indiceCasuale].album.cover_medium ||
+      "./assets/imgs/main/default-image.jpg";
     img.alt = "Cover di " + tracks[indiceCasuale].album.title;
-    title.textContent = tracks[indiceCasuale].album.title || "Titolo Sconosciuto";
+    title.textContent =
+      tracks[indiceCasuale].album.title || "Titolo Sconosciuto";
   });
 }
 function mescolaArray(array) {
@@ -169,25 +186,23 @@ function creaEpopolaCards(tracks) {
               <div class="card bg-cards-favourites border-0">
                   <div class="card-body text-truncate" style=" max-widht: 150px">
                       <img src="${
-                        track.album.cover_medium || "./assets/imgs/main/default-image.jpg"
-                      }" class="card-img-top rounded" alt="Cover di ${track.title}">
-                      <h5 class="card-title mt-2">${track.title || "Titolo Sconosciuto"}</h5>
-                      <p class="card-text">Artista: ${track.artist.name || "Sconosciuto"}</p>
+                        track.album.cover_medium ||
+                        "./assets/imgs/main/default-image.jpg"
+                      }" class="card-img-top rounded" alt="Cover di ${
+      track.title
+    }">
+                      <h5 class="card-title mt-2">${
+                        track.title || "Titolo Sconosciuto"
+                      }</h5>
+                      <p class="card-text">Artista: ${
+                        track.artist.name || "Sconosciuto"
+                      }</p>
                   </div>
               </div>
           `;
     container.appendChild(card);
   });
 }
-
-document.querySelector(".toggle-button").addEventListener("click", function () {
-  let ul = this.nextElementSibling;
-  if (ul.style.display === "none") {
-    ul.style.display = "block";
-  } else {
-    ul.style.display = "none";
-  }
-});
 
 const removeAdButton = document.getElementById("rem-ad");
 removeAdButton.addEventListener("click", (event) => {
@@ -198,7 +213,9 @@ removeAdButton.addEventListener("click", (event) => {
 document.getElementById("play-button").addEventListener("click", function () {
   let adBannerImg = document.getElementById("ad-img").src;
   let adBannerTitle = document.getElementById("ad-title").textContent;
-  let adBannerArtist = document.getElementById("banner-text").getElementsByTagName("p")[1].textContent;
+  let adBannerArtist = document
+    .getElementById("banner-text")
+    .getElementsByTagName("p")[1].textContent;
 
   document.getElementById("player-bar").style.display = "block";
   document.getElementById("player-bar-img").src = adBannerImg;
