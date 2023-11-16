@@ -1,5 +1,15 @@
-const artistId = "3239781"; // Sostituisci con l'effettivo ID dell'artista che desideri ottenere
-const url = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`;
+const params = new URLSearchParams(window.location.search);
+const artistId = params.get("id");
+
+const url =
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "6788386030msha48a368adad879cp1b187ajsn6a3f06babbb5",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
 
 const mainContent = document.querySelector(".MainContent");
 const MainContentArtist = document.getElementById("MainContentArtist");
@@ -19,7 +29,7 @@ function goBack() {
   window.history.back();
 }
 window.onload = () => {
-  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
+  fetch(url, options)
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -29,8 +39,6 @@ window.onload = () => {
     })
 
     .then((data) => {
-      console.log(data);
-
       fetch(data.tracklist).then((res) => {
         return res.json();
       });
@@ -118,7 +126,7 @@ window.onload = () => {
             }
           })
           .then((data) => {
-            for (let i = 0; i < data.data.length; i++) {
+            for (let i = 0; i < 5; i++) {
               const p = `
     <div class='row d-flex TrackHover pt-3'>
       <p class='col-1 d-flex justify-content-center align-items-center text-secondary indiceTracks' onclick="ArtistPlayer(globalData.data[${i}])">${

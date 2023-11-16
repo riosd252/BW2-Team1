@@ -119,7 +119,7 @@ const nomiCanzoniGlobali = [
   "Poker Face - Lady Gaga",
   "Heroes - David Bowie",
   "Sultans of Swing - Dire Straits",
-  "Stairway to Heaven - Zeppelin",
+  "Stairway to Heaven - Led Zep...",
   "Sweet Dreams - Eurythmics",
   "Billie Jean - Michael Jackson",
   "Can't Help Falling in Love - Elvis",
