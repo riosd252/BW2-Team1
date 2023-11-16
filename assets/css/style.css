@@ -22,19 +22,11 @@ body {
 #main-scroll {
   overflow-y: scroll;
   max-height: 87vh;
-  background: linear-gradient(
-    0deg,
-    hsla(0, 0%, 7%, 1) 0%,
-    hsla(210, 11%, 15%, 1) 85%
-  );
+  background: linear-gradient(0deg, hsla(0, 0%, 7%, 1) 0%, hsla(210, 11%, 15%, 1) 85%);
 }
 
 #ad-banner {
-  background: linear-gradient(
-    10deg,
-    hsla(0, 0%, 0%, 1) 0%,
-    hsla(210, 11%, 15%, 1) 85%
-  );
+  background: linear-gradient(10deg, hsla(0, 0%, 0%, 1) 0%, hsla(210, 11%, 15%, 1) 85%);
 }
 
 #ad-img {
@@ -151,6 +143,12 @@ nav i {
 .toggle-button {
   background: none;
   border: none;
-  color: white; /* O qualsiasi altro colore che si abbini al tuo tema */
+  color: white;
+  cursor: pointer;
+}
+#player-bar {
+  display: none;
+}
+.card {
   cursor: pointer;
 }
