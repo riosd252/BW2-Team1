@@ -1,6 +1,5 @@
 html {
   overflow-y: hidden;
-  overflow-x: hidden;
 }
 
 body {
@@ -9,35 +8,21 @@ body {
 
 ::-webkit-scrollbar {
   background-color: transparent;
-  width: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(97, 97, 97);
+  background: rgb(167, 167, 167);
 }
 
 #side-scroll {
   overflow-y: scroll;
-  max-height: 70vh;
-}
-
-.custom-padding {
-  padding-bottom: 8rem;
+  max-height: 76vh;
 }
 
 #main-scroll {
   overflow-y: scroll;
-<<<<<<< HEAD
   max-height: 87vh;
   background: linear-gradient(0deg, hsla(0, 0%, 7%, 1) 0%, hsla(210, 11%, 15%, 1) 85%);
-=======
-  max-height: 84vh;
-  background: linear-gradient(
-    0deg,
-    hsla(0, 0%, 7%, 1) 0%,
-    hsla(210, 11%, 15%, 1) 85%
-  );
->>>>>>> c6ad5369a21c91c8aae8fba5bd4340a61290384e
 }
 
 #ad-banner {
@@ -133,16 +118,20 @@ svg {
 
 #side-scroll ul > li {
   list-style-type: none;
+  color: #adae98;
 }
 #side-scroll a {
   text-decoration: none;
+  color: #adae98;
 }
 
 nav ul > li {
   list-style-type: none;
+  color: #adae98;
 }
 nav a {
   text-decoration: none;
+  color: #adae98;
   vertical-align: middle;
 }
 
