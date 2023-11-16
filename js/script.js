@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
   const artists = [
     "Eminem",
@@ -180,6 +181,8 @@ function creaEpopolaCards(tracks) {
   });
 }
 
+=======
+>>>>>>> c6ad5369a21c91c8aae8fba5bd4340a61290384e
 document.querySelector(".toggle-button").addEventListener("click", function () {
   let ul = this.nextElementSibling;
   if (ul.style.display === "none") {
@@ -188,6 +191,7 @@ document.querySelector(".toggle-button").addEventListener("click", function () {
     ul.style.display = "none";
   }
 });
+<<<<<<< HEAD
 
 const removeAdButton = document.getElementById("rem-ad");
 removeAdButton.addEventListener("click", (event) => {
@@ -224,3 +228,5 @@ document.getElementById("play-button").addEventListener("click", function () {
     console.log("Nessun brano da riprodurre");
   }
 });
+=======
+>>>>>>> c6ad5369a21c91c8aae8fba5bd4340a61290384e
