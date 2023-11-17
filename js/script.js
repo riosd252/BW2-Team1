@@ -19,18 +19,23 @@ document.addEventListener("DOMContentLoaded", function () {
 function fetchTracksByArtists(artists, numTracks) {
   const promises = artists.map((artist) =>
     fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/search?q=artist:"${encodeURIComponent(artist)}"&limit=${numTracks}`,
+      `https://deezerdevs-deezer.p.rapidapi.com/search?q=artist:"${encodeURIComponent(
+        artist
+      )}"&limit=${numTracks}`,
       {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": "f8c6943d93msh1d1ded0507d1851p17c44djsn3c38bf1a0938",
+          "X-RapidAPI-Key":
+            "f8c6943d93msh1d1ded0507d1851p17c44djsn3c38bf1a0938",
           "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
         },
       }
     )
       .then((response) => response.json())
       .then((data) => data.data)
-      .catch((error) => console.error(`Errore nel fetch dei dati per ${artist}:`, error))
+      .catch((error) =>
+        console.error(`Errore nel fetch dei dati per ${artist}:`, error)
+      )
   );
 
   Promise.all(promises)
@@ -41,7 +46,9 @@ function fetchTracksByArtists(artists, numTracks) {
       creaEpopolaCards(combinedTracks);
       updateDOMWithAlbumData(combinedTracks);
     })
-    .catch((error) => console.error("Errore durante il recupero dei dati:", error));
+    .catch((error) =>
+      console.error("Errore durante il recupero dei dati:", error)
+    );
 }
 function updateDOMWithAlbumData(tracks) {
   const randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
@@ -49,12 +56,19 @@ function updateDOMWithAlbumData(tracks) {
   if (randomTrack && randomTrack.album) {
     const adImg = document.getElementById("ad-img");
     const adTitle = document.getElementById("ad-title");
-    const adArtist = document.getElementById("banner-text").getElementsByTagName("p")[1];
+    const adArtist = document
+      .getElementById("banner-text")
+      .getElementsByTagName("p")[1];
     const playButton = document.getElementById("play-button");
-    const goToAlbumLink = document.querySelector('.dropdown-item[href^="album.html"]');
-    const goToAlbumLink2 = document.querySelector('.dropdown-item[href^="artist.html"]');
+    const goToAlbumLink = document.querySelector(
+      '.dropdown-item[href^="album.html"]'
+    );
+    const goToAlbumLink2 = document.querySelector(
+      '.dropdown-item[href^="artist.html"]'
+    );
 
-    adImg.src = randomTrack.album.cover_medium || "./assets/imgs/main/default-image.jpg";
+    adImg.src =
+      randomTrack.album.cover_medium || "./assets/imgs/main/default-image.jpg";
     adImg.alt = "Cover di " + randomTrack.album.title;
     adTitle.textContent = randomTrack.album.title;
     adArtist.textContent = randomTrack.artist.name;
@@ -154,14 +168,19 @@ function popolaNextWick(tracks) {
     const img = card.querySelector("img");
     const title = card.querySelector(".card-body p");
 
-    img.src = track.album.cover_medium || "./assets/imgs/main/default-image.jpg";
+    img.src =
+      track.album.cover_medium || "./assets/imgs/main/default-image.jpg";
     img.alt = "Cover di " + track.album.title;
     title.innerHTML = `
-      <a href="album.html?id=${track.album.id}" class="text-decoration-none text-white">${
+      <a href="album.html?id=${
+        track.album.id
+      }" class="text-decoration-none text-white">${
       track.title || "Titolo Sconosciuto"
     }</a>
       <br/>
-       <a href="artist.html?id=${track.artist.id}" class="text-decoration-none text-white">${
+       <a href="artist.html?id=${
+         track.artist.id
+       }" class="text-decoration-none text-white">${
       track.artist.name || "Sconosciuto"
     }</a>
     `;
@@ -180,16 +199,24 @@ function creaEpopolaCards(tracks) {
     card.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2";
     card.innerHTML = `
       <div class="card bg-cards-favourites border-0">
-          <div class="card-body text-truncate" style="max-width: 150px">
+          <div class="card-body">
               <img src="${
-                track.album.cover_medium || "./assets/imgs/main/default-image.jpg"
+                track.album.cover_medium ||
+                "./assets/imgs/main/default-image.jpg"
               }" class="card-img-top rounded" alt="Cover di ${track.title}">
-              <h5 class="card-title mt-2"><a href="album.html?id=${
+              <h5 class="card-title mt-2" style = "display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;"><a href="album.html?id=${
                 track.album.id
-              }" class="text-decoration-none text-white">${track.title || "Titolo Sconosciuto"}</a></h5>
+              }" class="text-decoration-none text-white">${
+      track.title || "Titolo Sconosciuto"
+    }</a></h5>
               <p class="card-text"> <a href="artist.html?id=${
                 track.artist.id
-              }" class="text-decoration-none text-white">${track.artist.name || "Sconosciuto"}</a></p>
+              }" class="text-decoration-none text-white">${
+      track.artist.name || "Sconosciuto"
+    }</a></p>
           </div>
       </div>
     `;
@@ -211,7 +238,11 @@ function riproduciAudio(url) {
   }
 
   currentAudio = new Audio(url);
-  currentAudio.play().catch((error) => console.error("Errore nella riproduzione del brano:", error));
+  currentAudio
+    .play()
+    .catch((error) =>
+      console.error("Errore nella riproduzione del brano:", error)
+    );
 }
 
 function attivaPlayerBarConDettagli(track) {
@@ -232,7 +263,9 @@ removeAdButton.addEventListener("click", (event) => {
 document.getElementById("play-button").addEventListener("click", function () {
   let adBannerImg = document.getElementById("ad-img").src;
   let adBannerTitle = document.getElementById("ad-title").textContent;
-  let adBannerArtist = document.getElementById("banner-text").getElementsByTagName("p")[1].textContent;
+  let adBannerArtist = document
+    .getElementById("banner-text")
+    .getElementsByTagName("p")[1].textContent;
 
   document.getElementById("player-bar").style.display = "block";
   document.getElementById("player-bar-img").src = adBannerImg;
@@ -259,7 +292,9 @@ document.getElementById("play-button").addEventListener("click", function () {
   }
 });
 function creaControlliPlayer() {
-  const container = document.querySelector(".col-6.d-flex.flex-column.align-items-center");
+  const container = document.querySelector(
+    ".col-6.d-flex.flex-column.align-items-center"
+  );
 
   const controlliDiv = document.createElement("div");
   controlliDiv.id = "controlli-player";
@@ -295,17 +330,24 @@ creaControlliPlayer();
 document.addEventListener("DOMContentLoaded", function () {
   const playPauseBtn = document.getElementById("play-pause-btn");
   const volumeControl = document.getElementById("volume-control");
-  document.getElementById("prev-track-btn").addEventListener("click", function () {
-    if (currentAudio) {
-      currentAudio.currentTime = Math.max(0, currentAudio.currentTime - 2);
-    }
-  });
+  document
+    .getElementById("prev-track-btn")
+    .addEventListener("click", function () {
+      if (currentAudio) {
+        currentAudio.currentTime = Math.max(0, currentAudio.currentTime - 2);
+      }
+    });
 
-  document.getElementById("next-track-btn").addEventListener("click", function () {
-    if (currentAudio) {
-      currentAudio.currentTime = Math.min(currentAudio.duration, currentAudio.currentTime + 2);
-    }
-  });
+  document
+    .getElementById("next-track-btn")
+    .addEventListener("click", function () {
+      if (currentAudio) {
+        currentAudio.currentTime = Math.min(
+          currentAudio.duration,
+          currentAudio.currentTime + 2
+        );
+      }
+    });
 
   playPauseBtn.addEventListener("click", function () {
     if (currentAudio) {
@@ -324,4 +366,55 @@ document.addEventListener("DOMContentLoaded", function () {
       currentAudio.volume = this.value;
     }
   });
+});
+
+const baseUrl = "assets/imgs/search/";
+let imageUrls = [];
+
+for (var i = 1; i <= 40; i++) {
+  imageUrls.push(baseUrl + "image-" + i + ".jpg");
+}
+
+const searchBtn = document.getElementById("search");
+const mainScroll = document.getElementById("main-scroll");
+const searchForm = document.querySelector("div > form");
+const searchInput = document.getElementById("search-input");
+
+searchBtn.addEventListener("click", () => {
+  searchForm.classList.remove("d-none");
+  searchForm.classList.add("d-flex");
+
+  mainScroll.innerHTML = "";
+  mainScroll.className = "row mt-4 gy-3";
+
+  imageUrls.forEach((img) => {
+    const cardCol = document.createElement("div");
+    cardCol.className = "col-6 col-md-4 col-xxl-3";
+    const card = document.createElement("div");
+    card.className = "card";
+    const cardImg = document.createElement("img");
+    cardImg.src = img;
+    cardImg.className = "rounded";
+
+    card.appendChild(cardImg);
+    cardCol.appendChild(card);
+    mainScroll.appendChild(cardCol);
+  });
+});
+
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "6788386030msha48a368adad879cp1b187ajsn6a3f06babbb5",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  fetch(url + searchInput.value, options)
+    .then((response) => response.json())
+    .then((obj) => console.log(obj));
 });
