@@ -18,7 +18,7 @@ body {
 
 #side-scroll {
   overflow-y: scroll;
-  max-height: 70vh;
+  max-height: 76vh;
 }
 
 .custom-padding {
@@ -39,7 +39,7 @@ body {
 #main-scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 84vh;
+  max-height: 92vh;
   background: linear-gradient(
     0deg,
     hsla(0, 0%, 7%, 1) 0%,
@@ -238,4 +238,11 @@ ol li::before {
   .barraUtente {
     width: 80%;
   }
+}
+
+#prev-track-btn,
+#play-pause-btn,
+#next-track-btn {
+  background-color: transparent;
+  border: none;
 }

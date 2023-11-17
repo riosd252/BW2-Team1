@@ -64,10 +64,6 @@ body {
   background-attachment: local;
 }
 
-#nav {
-  background-color: rgba(10, 10, 10, 0.199);
-}
-
 #album-img-container {
   width: 225px;
 }
@@ -123,8 +119,8 @@ body {
   background-color: black;
 }
 .custom-right-side {
-  padding: 0.3em !important;
-  font-size: 0.5em;
+  padding: 0.5em !important;
+  font-size: 0.8em;
 }
 .siderbarRx .bg-black {
   height: 100%;

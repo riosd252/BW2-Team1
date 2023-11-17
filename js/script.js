@@ -199,7 +199,7 @@ function creaEpopolaCards(tracks) {
     card.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2";
     card.innerHTML = `
       <div class="card bg-cards-favourites border-0">
-          <div class="card-body">
+          <div class="card-body" style = "position:relative;">
               <img src="${
                 track.album.cover_medium ||
                 "./assets/imgs/main/default-image.jpg"
@@ -212,7 +212,10 @@ function creaEpopolaCards(tracks) {
               }" class="text-decoration-none text-white">${
       track.title || "Titolo Sconosciuto"
     }</a></h5>
-              <p class="card-text"> <a href="artist.html?id=${
+              <p class="card-text" style = "display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;"> <a href="artist.html?id=${
                 track.artist.id
               }" class="text-decoration-none text-white">${
       track.artist.name || "Sconosciuto"
@@ -321,7 +324,7 @@ function creaControlliPlayer() {
 
   const volumeIcon = document.createElement("p");
   volumeIcon.innerHTML = `<i class="bi bi-volume-up"></i>`;
-  volumeIcon.className = "fs-3 mb-0 me-2 d-inline-block align-middle";
+  volumeIcon.className = "fs-3 mb-0 me-2 d-none d-lg-inline-block align-middle";
   const volumeControl = document.createElement("input");
   volumeControl.className = "align-middle";
   volumeControl.type = "range";
@@ -462,7 +465,7 @@ searchForm.addEventListener("submit", (e) => {
       artistColHeader.innerText = "Risultato più rilevante";
       const artistCard = document.createElement("div");
       artistCard.className =
-        "card bg-cards border-0 p-3 align-items-center align-items-lg-start text-center text-lg-start";
+        "card bg-cards border-0 p-3 align-items-center align-items-lg-start text-center text-lg-start card-artist-hover";
       const artistcPic = document.createElement("img");
       artistcPic.src = obj.data[0].artist.picture_medium;
       artistcPic.className = "rounded-pill w-25";
@@ -486,9 +489,9 @@ searchForm.addEventListener("submit", (e) => {
       tracksColHeader.innerText = "Brani";
       tracksCol.appendChild(tracksColHeader);
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         const trackCard = document.createElement("div");
-        trackCard.className = "card flex-row border-0 p-2";
+        trackCard.className = "card flex-row border-0 p-2 card-hover";
         const trackImg = document.createElement("img");
         trackImg.className = "rounded";
         trackImg.src = obj.data[i].album.cover_small;
@@ -510,5 +513,6 @@ searchForm.addEventListener("submit", (e) => {
 
       mainScroll.appendChild(artistCol);
       mainScroll.appendChild(tracksCol);
+      mainScroll.style.paddingBottom = "50rem";
     });
 });

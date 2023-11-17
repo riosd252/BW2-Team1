@@ -87,8 +87,8 @@ body {
   background-color: black;
 }
 .custom-right-side {
-  padding: 0.3em !important;
-  font-size: 0.5em;
+  padding: 0.5em !important;
+  font-size: 0.8em;
 }
 .siderbarRx .bg-black {
   height: 100%;
@@ -172,4 +172,16 @@ nav i {
 #next-track-btn {
   background-color: transparent;
   border: none;
+}
+
+.card-hover {
+  background-color: transparent;
+}
+.card:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.card {
+  transition: all;
+  transition-duration: 500ms;
 }

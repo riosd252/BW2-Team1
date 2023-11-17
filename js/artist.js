@@ -101,7 +101,6 @@ window.onload = () => {
         <div class='popolari col-12 col-md-8'>
         <h3 class= 'mb-4'>Popolari</h3>
         <div id='tracksX5'></div>
-        <p class='text-light'>VISUALIZZA ALTRO</p>
         </div>
         <div class='col-12 col-md-4 pb-3'>
         <h3 class= 'mb-4' >Brani che ti piacciono</h3>
@@ -182,3 +181,122 @@ window.onload = () => {
       console.log(err);
     });
 };
+
+function creaControlliPlayer() {
+  const container = document.querySelector(
+    ".col-4.d-flex.justify-content-center.align-items-center"
+  );
+
+  const volumeContainer = document.getElementById("volume-container");
+
+  const controlliDiv = document.createElement("div");
+  controlliDiv.id = "controlli-player";
+  const volumeDiv = document.createElement("div");
+  const prevBtn = document.createElement("button");
+  prevBtn.id = "prev-track-btn";
+  prevBtn.className = "fs-3";
+  prevBtn.innerHTML = `<i class="bi bi-chevron-double-left"></i>`;
+  controlliDiv.appendChild(prevBtn);
+
+  const playPauseBtn = document.createElement("button");
+  playPauseBtn.id = "play-pause-btn";
+  playPauseBtn.className = "fs-3";
+  playPauseBtn.innerHTML = `<i class="bi bi-play-fill"></i>`;
+  controlliDiv.appendChild(playPauseBtn);
+
+  const nextBtn = document.createElement("button");
+  nextBtn.id = "next-track-btn";
+  nextBtn.className = "fs-3";
+  nextBtn.innerHTML = `<i class="bi bi-chevron-double-right"></i>`;
+  controlliDiv.appendChild(nextBtn);
+
+  const volumeIcon = document.createElement("p");
+  volumeIcon.innerHTML = `<i class="bi bi-volume-up"></i>`;
+  volumeIcon.className = "fs-3 mb-0 me-2 d-inline-block align-middle";
+  const volumeControl = document.createElement("input");
+  volumeControl.className = "align-middle";
+  volumeControl.type = "range";
+  volumeControl.id = "volume-control";
+  volumeControl.min = "0";
+  volumeControl.max = "1";
+  volumeControl.step = "0.01";
+  volumeControl.value = "0.5";
+  volumeDiv.appendChild(volumeIcon);
+  volumeDiv.appendChild(volumeControl);
+
+  container.appendChild(controlliDiv);
+  volumeContainer.appendChild(volumeDiv);
+}
+
+creaControlliPlayer();
+
+const nomiCanzoniGlobali = [
+  "Bohemian Rhapsody - Queen",
+  "La Camisa Negra - Juanes",
+  "Gangnam Style - Psy",
+  "Hips Don't Lie - Shakira",
+  "Con Te Partirò -  Bocelli",
+  "Despacito - Luis Fonsi",
+  "Waka Waka  - Shakira",
+  "Macarena - Los Del Rio",
+  "Bamboleo - Gipsy Kings",
+  "Volare - Domenico Modugno",
+  "La Bamba - Ritchie Valens",
+  "Felicità - Al Bano & Romina",
+  "Wind of Change - Scorpions",
+  "Dancing Queen - ABBA",
+  "Let It Be - The Beatles",
+  "Imagine - John Lennon",
+  "One Love - Bob Marley",
+  "Hotel California - Eagles",
+  "Shape of You - Ed Sheeran",
+  "Smooth - Santana",
+  "Africa - Toto",
+  "Bésame Mucho - Velázquez",
+  "Bailando - Enrique Iglesias",
+  "Ai Se Eu Te Pego -  Teló",
+  "Karma Chameleon -  Club",
+  "Rock the Casbah - The Clash",
+  "Wonderwall - Oasis",
+  "Sweet Child o' Mine -  Roses",
+  "Rolling in the Deep - Adele",
+  "Livin' la Vida Loca -  Martin",
+  "Eye of the Tiger - Survivor",
+  "I Will Survive - Gloria Gaynor",
+  "Stayin' Alive - Bee Gees",
+  "Take On Me - a-ha",
+  "Poker Face - Lady Gaga",
+  "Heroes - David Bowie",
+  "Sultans of Swing - Dire Straits",
+  "Stairway to Heaven - Zeppelin",
+  "Sweet Dreams - Eurythmics",
+  "Billie Jean - Michael Jackson",
+  "Can't Help Falling in Love - Elvis",
+  "My Heart Will Go On - Celine Dion",
+  "Zombie - The Cranberries",
+  "Nessun Dorma - Luciano Pavarotti",
+  "Vogue - Madonna",
+  "Thriller - Michael Jackson",
+  "Like a Rolling Stone - Bob Dylan",
+  "Born in the U.S.A. - Bruce",
+  "Creep - Radiohead",
+  "Hey Jude - The Beatles",
+];
+
+function popolaSideScroll() {
+  const sideScroll = document.getElementById("side-scroll");
+  sideScroll.innerHTML = "";
+
+  nomiCanzoniGlobali.forEach((nomeCanzone) => {
+    let li = document.createElement("li");
+    li.style.listStyle = "none";
+    let a = document.createElement("a");
+    a.className = "nav-link";
+    a.href = "#";
+    a.textContent = nomeCanzone;
+    li.appendChild(a);
+    sideScroll.appendChild(li);
+  });
+}
+
+popolaSideScroll();
