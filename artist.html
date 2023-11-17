@@ -20,17 +20,26 @@
   <body data-bs-theme="dark">
     <div class="container-fluid">
       <div class="row">
-        <div class="d-none d-md-block col-md-2 pe-0 bg-black">
+        <div class="d-none d-lg-block col-md-2 pe-0 bg-black">
           <div>
             <nav>
-              <div class="cont_list_nav mt-5">
-                <button class="toggle-button">...</button>
+              <a
+                class="text-white"
+                data-bs-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                ...
+              </a>
+              <div class="collapse" id="collapseExample">
                 <ul>
                   <li class="d-flex align-items-center">
                     <i class="bi bi-house-door-fill"></i
-                    ><a class="nav-link" href="#">Home</a>
+                    ><a class="nav-link" href="./index.html">Home</a>
                   </li>
-                  <li class="d-flex align-items-center">
+                  <li id="search" class="d-flex align-items-center">
                     <i class="bi bi-search"></i
                     ><a class="nav-link" href="#">Cerca</a>
                   </li>
@@ -58,92 +67,9 @@
               </div>
             </nav>
           </div>
-          <hr class="division m-0" />
+          <hr class="division m-0 text-secondary" />
           <div id="side-scroll" class="custom-padding">
-            <ul>
-              <li><a class="nav-link" href="#">Lorem, ipsum dolor.</a></li>
-              <li><a class="nav-link" href="#">Ullam, commodi ratione!</a></li>
-              <li><a class="nav-link" href="#">Amet, tempore dolores?</a></li>
-              <li>
-                <a class="nav-link" href="#">Placeat, cupiditate esse.</a>
-              </li>
-              <li><a class="nav-link" href="#">Unde, deserunt eveniet.</a></li>
-              <li><a class="nav-link" href="#">Nihil, quo voluptate.</a></li>
-              <li><a class="nav-link" href="#">Dolor, quis culpa.</a></li>
-              <li>
-                <a class="nav-link" href="#">Nemo, consequatur veniam!</a>
-              </li>
-              <li><a class="nav-link" href="#">Odio, doloremque culpa!</a></li>
-              <li>
-                <a class="nav-link" href="#"
-                  >Consectetur, laudantium voluptatem.</a
-                >
-              </li>
-              <li>
-                <a class="nav-link" href="#"
-                  >Doloremque, necessitatibus eaque!</a
-                >
-              </li>
-              <li><a class="nav-link" href="#">Sequi, laboriosam quasi?</a></li>
-              <li>
-                <a class="nav-link" href="#">Doloribus, optio similique!</a>
-              </li>
-              <li><a class="nav-link" href="#">Eius, minus autem.</a></li>
-              <li><a class="nav-link" href="#">Alias, est debitis.</a></li>
-              <li><a class="nav-link" href="#">Itaque, numquam iusto.</a></li>
-              <li><a class="nav-link" href="#">Iure, soluta dolores.</a></li>
-              <li><a class="nav-link" href="#">Quisquam, nam placeat!</a></li>
-              <li>
-                <a class="nav-link" href="#">Culpa, numquam similique!</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#"
-                  >Nesciunt, repellendus laboriosam?</a
-                >
-              </li>
-              <li><a class="nav-link" href="#">Dolore, enim magni?</a></li>
-              <li><a class="nav-link" href="#">Nisi, ullam omnis.</a></li>
-              <li><a class="nav-link" href="#">Autem, sunt aspernatur.</a></li>
-              <li><a class="nav-link" href="#">Culpa, at veritatis.</a></li>
-              <li>
-                <a class="nav-link" href="#">Nesciunt, cumque commodi!</a>
-              </li>
-              <li><a class="nav-link" href="#">Hic, maxime vitae.</a></li>
-              <li><a class="nav-link" href="#">Quo, non dolorem.</a></li>
-              <li><a class="nav-link" href="#">Ipsam, soluta error!</a></li>
-              <li><a class="nav-link" href="#">Et, beatae libero!</a></li>
-              <li>
-                <a class="nav-link" href="#">Incidunt, non voluptatem!</a>
-              </li>
-              <li><a class="nav-link" href="#">Quam, assumenda est!</a></li>
-              <li>
-                <a class="nav-link" href="#">Doloremque, dolore numquam?</a>
-              </li>
-              <li><a class="nav-link" href="#">Magnam, quos corrupti.</a></li>
-              <li>
-                <a class="nav-link" href="#">Aliquid, suscipit voluptates.</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#">Sunt, earum perspiciatis!</a>
-              </li>
-              <li><a class="nav-link" href="#">Ea, dicta nobis.</a></li>
-              <li>
-                <a class="nav-link" href="#">Molestias, praesentium. Rerum?</a>
-              </li>
-              <li><a class="nav-link" href="#">Distinctio, mollitia ad!</a></li>
-              <li><a class="nav-link" href="#">Vitae, odit minima.</a></li>
-              <li><a class="nav-link" href="#">Omnis, odit quod!</a></li>
-              <li><a class="nav-link" href="#">Error, qui dolore.</a></li>
-              <li><a class="nav-link" href="#">Nihil, esse non?</a></li>
-              <li><a class="nav-link" href="#">Unde, id nisi.</a></li>
-              <li><a class="nav-link" href="#">Animi, ullam asperiores!</a></li>
-              <li><a class="nav-link" href="#">Obcaecati, explicabo ab.</a></li>
-              <li><a class="nav-link" href="#">Alias, quia doloremque.</a></li>
-              <li><a class="nav-link" href="#">Fugiat, omnis quae.</a></li>
-              <li><a class="nav-link" href="#">Aperiam, beatae totam!</a></li>
-              <li><a class="nav-link" href="#">Error, autem molestiae.</a></li>
-              <li><a class="nav-link" href="#">Magni, quia nesciunt.</a></li>
-            </ul>
+            <ul></ul>
           </div>
           <img id="immagineCanvas" src="" class="d-none" />
         </div>
@@ -165,6 +91,21 @@
               ><button class="btn px-1" type="button">
                 <i class="bi bi-arrow-right-circle fs-4 text-secondary"></i>
               </button>
+              <form class="ms-2 d-none" role="search">
+                <input
+                  id="search-input"
+                  class="form-control rounded-pill me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success rounded-pill"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
             </div>
             <div class="dropdown d-none d-md-block">
               <a

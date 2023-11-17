@@ -7,10 +7,78 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "6788386030msha48a368adad879cp1b187ajsn6a3f06babbb5",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
 };
+const nomiCanzoniGlobali = [
+  "Bohemian Rhapsody - Queen",
+  "La Camisa Negra - Juanes",
+  "Gangnam Style - Psy",
+  "Hips Don't Lie - Shakira",
+  "Con Te Partirò -  Bocelli",
+  "Despacito - Luis Fonsi",
+  "Waka Waka  - Shakira",
+  "Macarena - Los Del Rio",
+  "Bamboleo - Gipsy Kings",
+  "Volare - Domenico Modugno",
+  "La Bamba - Ritchie Valens",
+  "Felicità - Al Bano & Romina",
+  "Wind of Change - Scorpions",
+  "Dancing Queen - ABBA",
+  "Let It Be - The Beatles",
+  "Imagine - John Lennon",
+  "One Love - Bob Marley",
+  "Hotel California - Eagles",
+  "Shape of You - Ed Sheeran",
+  "Smooth - Santana",
+  "Africa - Toto",
+  "Bésame Mucho - Velázquez",
+  "Bailando - Enrique Iglesias",
+  "Ai Se Eu Te Pego -  Teló",
+  "Karma Chameleon -  Club",
+  "Rock the Casbah - The Clash",
+  "Wonderwall - Oasis",
+  "Sweet Child o' Mine -  Roses",
+  "Rolling in the Deep - Adele",
+  "Livin' la Vida Loca -  Martin",
+  "Eye of the Tiger - Survivor",
+  "I Will Survive - Gloria Gaynor",
+  "Stayin' Alive - Bee Gees",
+  "Take On Me - a-ha",
+  "Poker Face - Lady Gaga",
+  "Heroes - David Bowie",
+  "Sultans of Swing - Dire Straits",
+  "Stairway to Heaven - Led Zep...",
+  "Sweet Dreams - Eurythmics",
+  "Billie Jean - Michael Jackson",
+  "Can't Help Falling in Love - Elvis",
+  "My Heart Will Go On - Celine Dion",
+  "Zombie - The Cranberries",
+  "Nessun Dorma - Luciano Pavarotti",
+  "Vogue - Madonna",
+  "Thriller - Michael Jackson",
+  "Like a Rolling Stone - Bob Dylan",
+  "Born in the U.S.A. - Bruce",
+  "Creep - Radiohead",
+  "Hey Jude - The Beatles"
+];
 
+function popolaSideScroll() {
+  const sideScroll = document.getElementById("side-scroll");
+  sideScroll.innerHTML = "";
+
+  nomiCanzoniGlobali.forEach((nomeCanzone) => {
+    let li = document.createElement("li");
+    li.style.listStyle = "none";
+    let a = document.createElement("a");
+    a.href = "#";
+    a.textContent = nomeCanzone;
+    li.appendChild(a);
+    sideScroll.appendChild(li);
+  });
+}
+
+popolaSideScroll();
 const mainContent = document.querySelector(".MainContent");
 const MainContentArtist = document.getElementById("MainContentArtist");
 const image = document.getElementById("immagineCanvas");
@@ -22,12 +90,7 @@ function displayPlayList(items) {
     itemText.textContent = item;
   });
 }
-function goHome() {
-  window.location = "home.html";
-}
-function goBack() {
-  window.history.back();
-}
+
 window.onload = () => {
   fetch(url, options)
     .then((res) => {
@@ -44,7 +107,8 @@ window.onload = () => {
       });
 
       image.src = data.picture;
-      const contenuti = `<div id =main-scroll>
+      const contenuti = `<div id='main-scroll'>
+      
       <div id='backgroundRelative'>
   <div id='backgroundImage'>
   </div>
@@ -110,7 +174,7 @@ window.onload = () => {
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
       </svg></div></div><div class='col-9 d-flex flex-column justify-content-center p-0'><p class='mb-1'>Hai messo Mi piace a 11 brani</p><p class='m-0 text-secondary'>Di ${data.name}</p></div></div>
         </div>
-        </div></div>`;
+        </div></div> `;
       mainContent.innerHTML += contenuti;
       const trackDiv = document.getElementById("tracksX5");
       const artistDiv = document.getElementById("backgroundImage");
@@ -182,3 +246,55 @@ window.onload = () => {
       console.log(err);
     });
 };
+
+const baseUrl = "assets/imgs/search/";
+let imageUrls = [];
+
+for (var i = 1; i <= 40; i++) {
+  imageUrls.push(baseUrl + "image-" + i + ".jpg");
+}
+console.log(imageUrls);
+const searchBtn = document.getElementById("search");
+const mainScroll = document.getElementById("main-scroll");
+
+const searchForm = document.querySelector("div > form");
+const searchInput = document.getElementById("search-input");
+
+searchBtn.addEventListener("click", () => {
+  searchForm.classList.remove("d-none");
+  searchForm.classList.add("d-flex");
+
+  mainScroll.innerHTML = "";
+  mainScroll.className = "row mt-4 gy-3";
+
+  imageUrls.forEach((img) => {
+    const cardCol = document.createElement("div");
+    cardCol.className = "col-6 col-md-4 col-xxl-3";
+    const card = document.createElement("div");
+    card.className = "card";
+    const cardImg = document.createElement("img");
+    cardImg.src = img;
+    cardImg.className = "rounded";
+
+    card.appendChild(cardImg);
+    cardCol.appendChild(card);
+    mainScroll.appendChild(cardCol);
+  });
+});
+
+const url2 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
+const options2 = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "53e4046c80msh9f9397b729764bbp1d9647jsna3f6a573b8be",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
+};
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  fetch(url2 + searchInput.value, options2)
+    .then((response) => response.json())
+    .then((obj) => console.log(obj));
+});
