@@ -416,5 +416,64 @@ searchForm.addEventListener("submit", (e) => {
 
   fetch(url + searchInput.value, options)
     .then((response) => response.json())
-    .then((obj) => console.log(obj));
+    .then((obj) => {
+      mainScroll.innerHTML = "";
+      const artistCol = document.createElement("div");
+      artistCol.className = "col-12 col-lg-4";
+      const tracksCol = document.createElement("div");
+      tracksCol.className = "col-12 col-lg-8";
+
+      const artistColHeader = document.createElement("h2");
+      artistColHeader.innerText = "Risultato più rilevante";
+      const artistCard = document.createElement("div");
+      artistCard.className =
+        "card bg-cards border-0 p-3 align-items-center align-items-lg-start text-center text-lg-start";
+      const artistcPic = document.createElement("img");
+      artistcPic.src = obj.data[0].artist.picture_medium;
+      artistcPic.className = "rounded-pill w-25";
+      const artistNameDiv = document.createElement("div");
+      artistNameDiv.className = "card-body p-0 pt-2";
+      const artistName = document.createElement("h1");
+      artistName.innerText = obj.data[0].artist.name;
+      const cardLabel = document.createElement("p");
+      cardLabel.innerText = "Artista";
+
+      artistNameDiv.appendChild(artistName);
+      artistNameDiv.appendChild(cardLabel);
+      artistCard.appendChild(artistcPic);
+      artistCard.appendChild(artistNameDiv);
+      artistCol.appendChild(artistColHeader);
+      artistCol.appendChild(artistCard);
+
+      console.log(obj);
+
+      const tracksColHeader = document.createElement("h2");
+      tracksColHeader.innerText = "Brani";
+      tracksCol.appendChild(tracksColHeader);
+
+      for (let i = 0; i < 5; i++) {
+        const trackCard = document.createElement("div");
+        trackCard.className = "card flex-row border-0 p-2";
+        const trackImg = document.createElement("img");
+        trackImg.className = "rounded";
+        trackImg.src = obj.data[i].album.cover_small;
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body p-0 ps-2";
+        const trackName = document.createElement("h5");
+        trackName.className = "mb-0";
+        trackName.innerText = obj.data[i].title;
+        const trackArtist = document.createElement("p");
+        trackArtist.className = "text-secondary mb-0";
+        trackArtist.innerText = obj.data[i].artist.name;
+
+        cardBody.appendChild(trackName);
+        cardBody.appendChild(trackArtist);
+        trackCard.appendChild(trackImg);
+        trackCard.appendChild(cardBody);
+        tracksCol.appendChild(trackCard);
+      }
+
+      mainScroll.appendChild(artistCol);
+      mainScroll.appendChild(tracksCol);
+    });
 });
