@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
         tdTitleArtist.className = "fs-tbody w-55";
         const titleArtistDiv = document.createElement("div");
         titleArtistDiv.onclick = (e) => {
-          const playerImg = document.getElementById("player-img");
+          const playerImg = document.getElementById("player-bar-img");
           playerImg.setAttribute("src", track.album.cover_small);
           playerImg.classList.remove("d-none");
-          const playerTitle = document.getElementById("player-title");
+          const playerTitle = document.getElementById("player-bar-title");
           playerTitle.innerText = track.title;
           playerTitle.classList.remove("d-none");
-          const playerArtist = document.getElementById("player-artist");
+          const playerArtist = document.getElementById("player-bar-artist");
           playerArtist.innerText = track.artist.name;
           playerArtist.classList.remove("d-none");
         };
@@ -178,3 +178,51 @@ function popolaSideScroll() {
 }
 
 popolaSideScroll();
+
+function creaControlliPlayer() {
+  const container = document.querySelector(
+    ".col-4.d-flex.justify-content-center.align-items-center"
+  );
+
+  const volumeContainer = document.getElementById("volume-container");
+
+  const controlliDiv = document.createElement("div");
+  controlliDiv.id = "controlli-player";
+  const volumeDiv = document.createElement("div");
+  const prevBtn = document.createElement("button");
+  prevBtn.id = "prev-track-btn";
+  prevBtn.className = "fs-3";
+  prevBtn.innerHTML = `<i class="bi bi-chevron-double-left"></i>`;
+  controlliDiv.appendChild(prevBtn);
+
+  const playPauseBtn = document.createElement("button");
+  playPauseBtn.id = "play-pause-btn";
+  playPauseBtn.className = "fs-3";
+  playPauseBtn.innerHTML = `<i class="bi bi-play-fill"></i>`;
+  controlliDiv.appendChild(playPauseBtn);
+
+  const nextBtn = document.createElement("button");
+  nextBtn.id = "next-track-btn";
+  nextBtn.className = "fs-3";
+  nextBtn.innerHTML = `<i class="bi bi-chevron-double-right"></i>`;
+  controlliDiv.appendChild(nextBtn);
+
+  const volumeIcon = document.createElement("p");
+  volumeIcon.innerHTML = `<i class="bi bi-volume-up"></i>`;
+  volumeIcon.className = "fs-3 mb-0 me-2 d-inline-block align-middle";
+  const volumeControl = document.createElement("input");
+  volumeControl.className = "align-middle";
+  volumeControl.type = "range";
+  volumeControl.id = "volume-control";
+  volumeControl.min = "0";
+  volumeControl.max = "1";
+  volumeControl.step = "0.01";
+  volumeControl.value = "0.5";
+  volumeDiv.appendChild(volumeIcon);
+  volumeDiv.appendChild(volumeControl);
+
+  container.appendChild(controlliDiv);
+  volumeContainer.appendChild(volumeDiv);
+}
+
+creaControlliPlayer();

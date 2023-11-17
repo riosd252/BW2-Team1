@@ -20,7 +20,7 @@
   <body data-bs-theme="dark">
     <div class="container-fluid">
       <div class="row">
-        <div class="d-none d-md-block col-md-2 pe-0 custom bg-black">
+        <div class="d-none d-lg-block col-lg-2 pe-0 custom bg-black">
           <div>
             <nav>
               <a
@@ -73,9 +73,41 @@
             <ul></ul>
           </div>
         </div>
-        <div class="col-12 col-md-10 col-lg-8 pe-0">
+        <div class="col-12 col-lg-8 pe-0">
           <div class="d-flex justify-content-between pe-5 mt-2">
             <div class="d-flex">
+              <div
+                class="offcanvas offcanvas-start"
+                tabindex="-1"
+                id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel"
+              >
+                <ul>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-house-door-fill"></i
+                    ><a class="nav-link" href="./index.html">Home</a>
+                  </li>
+                  <li id="search-offcanvas" class="d-flex align-items-center">
+                    <i class="bi bi-search"></i
+                    ><a class="nav-link" href="#">Cerca</a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-collection-fill"></i
+                    ><a class="nav-link" href="#">La Tua Libreria</a>
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                class="d-lg-none btn btn-transparent"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
               <button class="btn px-1" type="button">
                 <i
                   class="bi bi-arrow-left-circle fs-4 text-secondary"
@@ -388,7 +420,7 @@
         </div>
         <div class="col-12 p-3" id="player-bar">
           <div class="row">
-            <div class="col-3 d-flex">
+            <div class="col-4 d-flex">
               <img
                 src=""
                 width="70"
@@ -401,7 +433,13 @@
                 <p id="player-bar-artist"></p>
               </div>
             </div>
-            <div class="col-6 d-flex flex-column align-items-center"></div>
+            <div
+              class="col-4 d-flex justify-content-center align-items-center"
+            ></div>
+            <div
+              class="col-4 d-flex justify-content-end align-items-center"
+              id="volume-container"
+            ></div>
           </div>
         </div>
       </div>

@@ -166,3 +166,10 @@ nav i {
 .card {
   cursor: pointer;
 }
+
+#prev-track-btn,
+#play-pause-btn,
+#next-track-btn {
+  background-color: transparent;
+  border: none;
+}

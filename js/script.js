@@ -293,36 +293,48 @@ document.getElementById("play-button").addEventListener("click", function () {
 });
 function creaControlliPlayer() {
   const container = document.querySelector(
-    ".col-6.d-flex.flex-column.align-items-center"
+    ".col-4.d-flex.justify-content-center.align-items-center"
   );
+
+  const volumeContainer = document.getElementById("volume-container");
 
   const controlliDiv = document.createElement("div");
   controlliDiv.id = "controlli-player";
+  const volumeDiv = document.createElement("div");
   const prevBtn = document.createElement("button");
   prevBtn.id = "prev-track-btn";
-  prevBtn.textContent = "Indietro";
+  prevBtn.className = "fs-3";
+  prevBtn.innerHTML = `<i class="bi bi-chevron-double-left"></i>`;
   controlliDiv.appendChild(prevBtn);
-  //avanti&indietro
-  const nextBtn = document.createElement("button");
-  nextBtn.id = "next-track-btn";
-  nextBtn.textContent = "Avanti";
-  controlliDiv.appendChild(nextBtn);
 
   const playPauseBtn = document.createElement("button");
   playPauseBtn.id = "play-pause-btn";
-  playPauseBtn.textContent = "Play";
+  playPauseBtn.className = "fs-3";
+  playPauseBtn.innerHTML = `<i class="bi bi-play-fill"></i>`;
   controlliDiv.appendChild(playPauseBtn);
 
+  const nextBtn = document.createElement("button");
+  nextBtn.id = "next-track-btn";
+  nextBtn.className = "fs-3";
+  nextBtn.innerHTML = `<i class="bi bi-chevron-double-right"></i>`;
+  controlliDiv.appendChild(nextBtn);
+
+  const volumeIcon = document.createElement("p");
+  volumeIcon.innerHTML = `<i class="bi bi-volume-up"></i>`;
+  volumeIcon.className = "fs-3 mb-0 me-2 d-inline-block align-middle";
   const volumeControl = document.createElement("input");
+  volumeControl.className = "align-middle";
   volumeControl.type = "range";
   volumeControl.id = "volume-control";
   volumeControl.min = "0";
   volumeControl.max = "1";
   volumeControl.step = "0.01";
   volumeControl.value = "0.5";
-  controlliDiv.appendChild(volumeControl);
+  volumeDiv.appendChild(volumeIcon);
+  volumeDiv.appendChild(volumeControl);
 
   container.appendChild(controlliDiv);
+  volumeContainer.appendChild(volumeDiv);
 }
 
 creaControlliPlayer();
@@ -353,10 +365,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentAudio) {
       if (currentAudio.paused) {
         currentAudio.play();
-        this.textContent = "Pause";
+        this.innerHTML = `<i class="bi bi-pause"></i>`;
       } else {
         currentAudio.pause();
-        this.textContent = "Play";
+        this.innerHTML = `<i class="bi bi-play-fill"></i>`;
       }
     }
   });
@@ -375,12 +387,35 @@ for (var i = 1; i <= 40; i++) {
   imageUrls.push(baseUrl + "image-" + i + ".jpg");
 }
 
+const searchOffcanvas = document.getElementById("search-offcanvas");
 const searchBtn = document.getElementById("search");
 const mainScroll = document.getElementById("main-scroll");
 const searchForm = document.querySelector("div > form");
 const searchInput = document.getElementById("search-input");
 
 searchBtn.addEventListener("click", () => {
+  searchForm.classList.remove("d-none");
+  searchForm.classList.add("d-flex");
+
+  mainScroll.innerHTML = "";
+  mainScroll.className = "row mt-4 gy-3";
+
+  imageUrls.forEach((img) => {
+    const cardCol = document.createElement("div");
+    cardCol.className = "col-6 col-md-4 col-xxl-3";
+    const card = document.createElement("div");
+    card.className = "card";
+    const cardImg = document.createElement("img");
+    cardImg.src = img;
+    cardImg.className = "rounded";
+
+    card.appendChild(cardImg);
+    cardCol.appendChild(card);
+    mainScroll.appendChild(cardCol);
+  });
+});
+
+searchOffcanvas.addEventListener("click", () => {
   searchForm.classList.remove("d-none");
   searchForm.classList.add("d-flex");
 
